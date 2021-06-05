@@ -1,38 +1,154 @@
-.App {
-  text-align: center;
+:root {
+  --bg: #36393F;
+  --profile-bg: #18191C;
+  --banner-h: 120px;
+  --banner-color: #D69264;
+  --border-radius: 20px;
+  --col-grey: #B9BBBE;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#app {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#profile {
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  border-radius: var(--border-radius) var(--border-radius) 0px 0px;
+  height: calc(100% - 50px);
+  align-self: flex-end;
+  background-color: var(--profile-bg);
+}
+
+#banner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: var(--banner-h);
+  border-radius: var(--border-radius) var(--border-radius) 0px 0px;
+  background-color: var(--banner-color);
+}
+
+#avatar {
+  position: absolute;
+  --size: 58px;
+  bottom: calc(var(--size) * -1);
+  left: 30px;
+  border-radius: 50%;
+  border: solid 10px var(--profile-bg);
+}
+
+#profile-content {
+  position: absolute;
+  top: var(--banner-h);
+  width: 100%;
+  left: 0px;
+  height: calc(100% - var(--banner-h));
+}
+
+#tag {
+  padding: 30px;
+  padding-top: 64px;
+  font-size: 34px;
+  font-family: 'Whitney Medium';
+}
+
+#username {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#discriminator {
+  color: var(--col-grey);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#about-me-header {
+  font-family: 'Whitney Bold';
+  text-transform: uppercase;
+  color: var(--col-grey);
+  font-size: 20px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#about-me {
+  font-family: 'Whitney Light Regular';
+  color: white;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 22px;
+}
+
+#roles-cont {
+  margin-top: 10px;
+  border-top: solid 1px #262729;
+}
+
+#roles-header {
+  font-family: 'Whitney Bold';
+  text-transform: uppercase;
+  color: var(--col-grey);
+  font-size: 20px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#roles {
+  display: flex;
+  flex-flow: wrap;
+  margin: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.role {
+  font-family: 'Whitney Medium';
+  position: relative;
+  font-size: 18px;
+  margin: 5px;
+  padding: 6px;
+  border-radius: 30px;
+  padding-left: calc(24px + 6px);
+  padding-right: 10px;
+}
+
+.role-dot {
+  position: absolute;
+  --size: 16px;
+  height: var(--size);
+  width: var(--size);
+  top: calc(50% - calc(var(--size) / 2));
+  left: 8px;
+  border-radius: 50%;
+}
+
+#badges {
+  display: flex;
+  justify-content: right;
+  flex-flow: wrap;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: calc(50% - 10px);
+}
+
+.badge {
+  margin: 6px;
+  --size: 30px;
+  width: var(--size);
+  height: var(--size);
 }
